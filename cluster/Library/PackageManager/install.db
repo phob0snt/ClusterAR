@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "packages": {
+    "com.microsoft.mixedreality.openxr": {
+      "tarball": {
+        "hash": "570cf286e70a",
+        "mtime": 1695310332640,
+        "size": 10451121,
+        "localPath": "C:\\Users\\Игорь\\Documents\\GitHub\\ClusterAR\\cluster\\Packages\\MixedReality\\com.microsoft.mixedreality.openxr-1.9.0.tgz"
+      }
+    },
+    "com.microsoft.mixedreality.toolkit.examples": {
+      "tarball": {
+        "hash": "42f661a9fb5b",
+        "mtime": 1695310378052,
+        "size": 55195848,
+        "localPath": "C:\\Users\\Игорь\\Documents\\GitHub\\ClusterAR\\cluster\\Packages\\MixedReality\\com.microsoft.mixedreality.toolkit.examples-2.8.3.tgz"
+      }
+    },
+    "com.microsoft.mixedreality.toolkit.extensions": {
+      "tarball": {
+        "hash": "84fe3e76e9b7",
+        "mtime": 1695310329367,
+        "size": 1131406,
+        "localPath": "C:\\Users\\Игорь\\Documents\\GitHub\\ClusterAR\\cluster\\Packages\\MixedReality\\com.microsoft.mixedreality.toolkit.extensions-2.8.3.tgz"
+      }
+    },
+    "com.microsoft.mixedreality.toolkit.figmabridge": {
+      "tarball": {
+        "hash": "b20dced74a18",
+        "mtime": 1695310329326,
+        "size": 796147,
+        "localPath": "C:\\Users\\Игорь\\Documents\\GitHub\\ClusterAR\\cluster\\Packages\\MixedReality\\com.microsoft.mixedreality.toolkit.figmabridge-0.1.1.tgz"
+      }
+    },
+    "com.microsoft.mixedreality.toolkit.foundation": {
+      "tarball": {
+        "hash": "f2323a9b7aec",
+        "mtime": 1695310330971,
+        "size": 11691469,
+        "localPath": "C:\\Users\\Игорь\\Documents\\GitHub\\ClusterAR\\cluster\\Packages\\MixedReality\\com.microsoft.mixedreality.toolkit.foundation-2.8.3.tgz"
+      }
+    },
+    "com.microsoft.mixedreality.toolkit.standardassets": {
+      "tarball": {
+        "hash": "aab256284dc6",
+        "mtime": 1695310329541,
+        "size": 5328617,
+        "localPath": "C:\\Users\\Игорь\\Documents\\GitHub\\ClusterAR\\cluster\\Packages\\MixedReality\\com.microsoft.mixedreality.toolkit.standardassets-2.8.3.tgz"
+      }
+    }
+  }
+}
