@@ -15,6 +15,15 @@ public class ScoreMenuScript : MonoBehaviour
     }
     void Update()
     {
-        tmp.text = $"Score: {BallCounter.Score}";
+        switch (GameManager.CurrentGamemode)
+        {
+            case BangerManager:
+                tmp.text = $"Score: {BangerHead.Score}";
+                break;
+            case DNCManager:
+                tmp.text = $"Score: {BallCounter.Score}";
+                break;
+        }
+        
     }
 }

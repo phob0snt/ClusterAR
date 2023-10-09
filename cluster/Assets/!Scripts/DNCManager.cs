@@ -25,6 +25,12 @@ public class DNCManager : GameMode
         EggSpawner.Instance.StartSpawningEggs(DNCSkins.Instance.GetEgg());
     }
 
+    public override void EndSession()
+    {
+        EggSpawner._isSpawning = false;
+        StartCoroutine(CustomSceneManager.ExitToMainMenu("DropNCatch"));
+        GameManager.HideMainMenu(false);
+    }
     private void SpawnBucket(GameObject bucket)
     {
         Vector3 player = GameObject.Find("Player").transform.position;

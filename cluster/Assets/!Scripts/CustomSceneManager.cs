@@ -25,7 +25,6 @@ public class CustomSceneManager : MonoBehaviour
 
     public static IEnumerator ExitToMainMenu(string currGM)
     {
-        Debug.Log("esss");
         var unloadingScene = SceneManager.UnloadSceneAsync(currGM);
         while (!unloadingScene.isDone)
         {
@@ -38,6 +37,12 @@ public class CustomSceneManager : MonoBehaviour
     {
         if (SceneManager.loadedSceneCount == 1)
         {
+            var loadingScene = SceneManager.LoadSceneAsync(gameMode, LoadSceneMode.Additive);
+            while (!loadingScene.isDone)
+            {
+                yield return null;
+                Debug.Log("waitbro");
+            }
             switch (gameMode)
             {
                 case "DropNCatch":
@@ -45,15 +50,10 @@ public class CustomSceneManager : MonoBehaviour
                     break;
                 case "Banger":
                     GameManager.CurrentGamemode = BangerManager.Instance;
+                    Debug.Log(GameManager.CurrentGamemode);
                     break;
             }
             GameManager.CurrentGamemode.ConfigureSession();
-            var loadingScene = SceneManager.LoadSceneAsync(gameMode, LoadSceneMode.Additive);
-            while (!loadingScene.isDone)
-            {
-                yield return null;
-                Debug.Log("waitbro");
-            }
         }
         else
         {

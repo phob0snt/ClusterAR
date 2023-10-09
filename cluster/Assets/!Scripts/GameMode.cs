@@ -5,4 +5,5 @@ using UnityEngine;
 public abstract class GameMode : MonoBehaviour
 {
     public abstract void ConfigureSession();
+    public abstract void EndSession();
 }

@@ -4,7 +4,19 @@ using UnityEngine;
 
 public class BangerManager : GameMode
 {
+
     public static BangerManager Instance;
+    [SerializeField] public List<BangerHead> heads;
+
+    private void OnEnable()
+    {
+        BangerHead.onCollision += StartRaisingHeads;
+    }
+
+    private void OnDisable()
+    {
+        BangerHead.onCollision -= StartRaisingHeads;
+    }
 
     private void Awake()
     {
@@ -18,8 +30,23 @@ public class BangerManager : GameMode
         }
     }
 
+
     public override void ConfigureSession()
     {
-        throw new System.NotImplementedException();
+        StartRaisingHeads();
+        BangerHead.isRaising = true;
+    }
+
+    public override void EndSession()
+    {
+        BangerHead.isRaising = false;
+        StartCoroutine(CustomSceneManager.ExitToMainMenu("Banger"));
+        GameManager.HideMainMenu(false);
+    }    
+
+    private void StartRaisingHeads()
+    {
+        BangerHead tempHead = RandHead.GetRandHead(heads);
+        tempHead.RaiseHead();
     }
 }
