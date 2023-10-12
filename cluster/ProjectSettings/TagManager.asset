@@ -11,6 +11,10 @@ TagManager:
   - BeforeDanger
   - AfterDanger
   - DangerProtector
+  - DangerLava
+  - DangerWater
+  - DangerHole
+  - Protector
   layers:
   - Default
   - TransparentFX

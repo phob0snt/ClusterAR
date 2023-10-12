@@ -8,21 +8,33 @@ using UnityEngine;
 public class FrogScript : MonoBehaviour
 {
     private bool isMoving;
+    private bool canGoOverDanger;
 
+    private void OnEnable()
+    {
+        Protector.SuccessGoing += WillMove;
+        Protector.UnSuccessGoing += WontMove;
+    }
 
+    private void OnDisable()
+    {
+        Protector.SuccessGoing -= WillMove;
+        Protector.UnSuccessGoing -= WontMove;
+    }
     enum Directions
     {
         Forward,
         Left,
         Right
     }
+
     void Update()
     {
         if (!isMoving)
         {
             RaycastHit hit;
             Physics.Raycast(transform.position, -transform.up, out hit, 0.05f);
-            Debug.DrawRay(transform.position, -transform.right * 0.06f);
+            Debug.DrawRay(transform.position, -transform.right * 0.05f);
             try
             {
                 switch (hit.transform.gameObject.tag)
@@ -36,15 +48,37 @@ public class FrogScript : MonoBehaviour
                     case "Left":
                         StartCoroutine(Move(Directions.Left));
                         break;
+                    case "BeforeDanger":
+                        if (hit.transform.gameObject.GetComponent<ProtectorState>().isProtected)
+                            StartCoroutine(Move(Directions.Forward));
+                        break;
+                    case "Protector":
+                        if (canGoOverDanger)
+                        {
+                            StartCoroutine(Move(Directions.Forward));
+                            canGoOverDanger = false;
+                        }
+                        else
+                            Death();
+                        break;
                 }
             }
             catch { }
         }
     }
 
-    private void MoveOverDanger()
+    private void WillMove()
     {
-        StartCoroutine(Move(Directions.Forward));
+        canGoOverDanger = true;
+    }
+
+    private void WontMove()
+    {
+        canGoOverDanger = false;
+    }
+    private void Death()
+    {
+        Destroy(gameObject);
     }
 
     private IEnumerator Move(Directions dir)
@@ -59,16 +93,17 @@ public class FrogScript : MonoBehaviour
                 transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 90, 0);
                 break;
         }
-        float totalMovementTime = 100f;
+        float totalMovementTime = 70f;
         float currMovenentTime = 0f;
-        Vector3 dest = transform.position - transform.right * 0.1f;
-        while (Vector3.Distance(transform.position, dest) > 0.04f)
+        Vector3 dest = transform.position - transform.right * 0.06f;
+        while (Vector3.Distance(transform.position, dest) > 0.0001f)
         {
             currMovenentTime += Time.deltaTime;
             transform.position = Vector3.Lerp(transform.position, dest, currMovenentTime / totalMovementTime);
             yield return null;
         }
         yield return new WaitForSeconds(1);
+        Debug.Log("end");
         isMoving = false;
     }
     
