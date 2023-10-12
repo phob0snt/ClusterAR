@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hammer
+  - Forward
+  - Left
+  - Right
+  - BeforeDanger
+  - AfterDanger
+  - DangerProtector
   layers:
   - Default
   - TransparentFX

@@ -451,6 +451,7 @@
 "Assets/!Scripts/RandHead.cs"
 "Assets/!Scripts/ScoreMenuScript.cs"
 "Assets/!Scripts/VelocityCheck.cs"
+"Assets/FrogScript.cs"
 "Assets/Samples/Mixed Reality Toolkit Examples/2.8.3/Demos - ScrollingObjectCollection/Scripts/ScrollableListPopulator.cs"
 "Assets/Samples/Mixed Reality Toolkit Examples/2.8.3/Demos - ScrollingObjectCollection/Scripts/ScrollablePagination.cs"
 "Assets/Samples/Mixed Reality Toolkit Examples/2.8.3/Demos - SpatialAwareness/Scripts/ClearSpatialObservations.cs"

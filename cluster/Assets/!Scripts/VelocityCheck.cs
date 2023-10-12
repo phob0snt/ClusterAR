@@ -9,10 +9,12 @@ public class VelocityCheck : MonoBehaviour
 {
     public float PrevFrameVel;
     private Vector3 prevPos;
+
     void FixedUpdate()
     {
         PrevFrameVel = (transform.position - prevPos).sqrMagnitude;
         prevPos = transform.position;
         Debug.Log(PrevFrameVel);
     }
+
 }
