@@ -20,13 +20,15 @@ public class StoneProtector : Protector
             Physics.Raycast(transform.position, -transform.up, out hit, 0.083f);
             try
             {
-                if (hit.transform.gameObject.CompareTag(ProtectorPairs.GetValueOrDefault(ProtectorType.Stone)))
+                if (hit.transform.gameObject.CompareTag(ProtectorPairs.GetValueOrDefault(type)))
                 {
-                    StartCoroutine(ApplyProtector(true));
+                    StartCoroutine(ApplyProtector());
+                    IsCorrect = true;
                 }
                 else if (ProtectorPairs.Values.Contains(hit.transform.gameObject.tag))
                 {
-                    StartCoroutine(ApplyProtector(false));
+                    StartCoroutine(ApplyProtector());
+                    IsCorrect = false;
                 }
             }
             catch { }
@@ -34,7 +36,7 @@ public class StoneProtector : Protector
     }
 
 
-    public override IEnumerator ApplyProtector(bool correct)
+    public override IEnumerator ApplyProtector()
     {
         isMoving = true;
         float totalMovementTime = 70f;
@@ -47,10 +49,10 @@ public class StoneProtector : Protector
             yield return null;
         }
         GetComponent<ObjectManipulator>().enabled = false;
-        if (!correct)
-            SuccessGoing?.Invoke();
-        else
-            UnSuccessGoing?.Invoke();
+        //if (correct)
+        //    SuccessGoing?.Invoke();
+        //else
+        //    UnSuccessGoing?.Invoke();
         isMoving = false;
     }
 }

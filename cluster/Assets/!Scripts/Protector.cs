@@ -7,6 +7,7 @@ public abstract class Protector : MonoBehaviour
 {
     public static Action SuccessGoing;
     public static Action UnSuccessGoing;
+    public bool IsCorrect;
     public enum ProtectorType
     {
         Stone,
@@ -21,6 +22,6 @@ public abstract class Protector : MonoBehaviour
     };
 
     public abstract ProtectorType type { get; }
-    public abstract IEnumerator ApplyProtector(bool correct);
+    public abstract IEnumerator ApplyProtector();
 
 }
