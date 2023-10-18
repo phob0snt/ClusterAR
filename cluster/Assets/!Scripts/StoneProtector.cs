@@ -9,8 +9,15 @@ using UnityEngine;
 public class StoneProtector : Protector
 {
     public override ProtectorType type => ProtectorType.Stone;
+    [SerializeField] private GameObject prefab;
     private RaycastHit hit;
     private bool isMoving;
+    private Vector3 startPos;
+
+    private void Awake()
+    {
+        startPos = transform.position;
+    }
 
     void Update()
     {
@@ -41,18 +48,15 @@ public class StoneProtector : Protector
         isMoving = true;
         float totalMovementTime = 70f;
         float currMovenentTime = 0f;
-        Vector3 dest = hit.transform.position;
-        while (Vector3.Distance(transform.position, dest) > 0.0001f)
+        while (Vector3.Distance(transform.position, hit.transform.position) > 0.0001f)
         {
             currMovenentTime += Time.deltaTime;
-            transform.position = Vector3.Lerp(transform.position, dest, currMovenentTime / totalMovementTime);
+            transform.position = Vector3.Lerp(transform.position, hit.transform.position, currMovenentTime / totalMovementTime);
             yield return null;
         }
+        Instantiate(prefab, startPos, Quaternion.identity).transform.parent = transform.parent;
+        transform.parent = hit.transform.parent;
         GetComponent<ObjectManipulator>().enabled = false;
-        //if (correct)
-        //    SuccessGoing?.Invoke();
-        //else
-        //    UnSuccessGoing?.Invoke();
         isMoving = false;
     }
 }

@@ -8,11 +8,13 @@ using UnityEngine;
 public class MapGenerator : MonoBehaviour
 {
     [SerializeField] private List<GameObject> voxelPrefabs;
+    [SerializeField] private Transform PlaySpace;
     // 0 - side, 1 - grass, 2 - road, 3 - RTurn, 4 - LTurn, 5 - befLavaDang, 6 - befWaterDang, 7 - befHoleDang, 
     // 8 - lavaDang, 9 - waterDang, 10 - holeDang, 11 - afterLavaDang, 12 - afterWaterDang, 13 - afterHoleDang
-    private readonly Dictionary<int, GameObject> voxels = new Dictionary<int, GameObject>();  
+    private readonly Dictionary<int, GameObject> voxels = new();  
     private List<int> currLine;
-    private List<int> prevLine = new List<int> { 0, 1, 1, 2, 1, 1, 1, 0};
+    private const int LINES_ONSCENE = 20;
+    private List<int> prevLine = new() { 0, 1, 1, 2, 1, 1, 1, 0};
     private Rotation prevLineRotation = Rotation.None;
     private int numOfLine = 4;
 
@@ -47,16 +49,15 @@ public class MapGenerator : MonoBehaviour
 
     private void Update()
     {
-            
+        Debug.Log(numOfLine);
     }
 
     public void Generate()
     {
-        Debug.Log("LOH");
         GenerateLine();
     }
 
-    private IEnumerator BuildLine(List<int> line, Rotation rotation = Rotation.None)
+    private IEnumerator BuildLine(Rotation rotation = Rotation.None)
     {
         Debug.Log("PSIKA");
         for (int i = 0; i < currLine.Count; i++)
@@ -65,6 +66,7 @@ public class MapGenerator : MonoBehaviour
             if (i > 0 && i < 7 && currLine[i] == 0)
                 currLine[i] = 1;
             GameObject voxel = Instantiate(voxelPrefabs[currLine[i]], new Vector3(transform.position.x - 0.06f * numOfLine, transform.position.y, transform.position.z + 0.06f * i), Quaternion.identity);
+            voxel.transform.parent = PlaySpace;
             if (i == 0)
                 voxel.transform.eulerAngles = new Vector3(0, 180, 0);
             
@@ -97,12 +99,19 @@ public class MapGenerator : MonoBehaviour
             }
             
         }
-        yield return new WaitForSeconds(0.5f);
-        numOfLine++;
         prevLine = currLine;
         currLine = new List<int> { 0, 0, 0, 0, 0, 0, 0, 0 };
-        GenerateLine();
-
+        if (numOfLine < LINES_ONSCENE)
+        {
+            yield return null;
+            numOfLine++;
+            GenerateLine();
+        }
+        else
+        {
+            numOfLine++;
+        }
+            
     }
 
     private void GenerateLine(CurrRoadState state = CurrRoadState.Default)
@@ -143,7 +152,7 @@ public class MapGenerator : MonoBehaviour
                     Debug.Log("DA");
                     currLine[roadIndex] = prevLine[roadIndex] + 3;
                     Debug.Log(currLine[roadIndex]);
-                    StartCoroutine(BuildLine(currLine));
+                    StartCoroutine(BuildLine());
                     prevLineRotation = Rotation.None;
                     return;
                 }
@@ -164,7 +173,7 @@ public class MapGenerator : MonoBehaviour
                             switch (voxelNum)
                             {
                                 case 2:
-                                    StartCoroutine(BuildLine(currLine));
+                                    StartCoroutine(BuildLine());
                                     prevLineRotation = Rotation.None;
                                     return;
                                 case 4:
@@ -175,7 +184,7 @@ public class MapGenerator : MonoBehaviour
                             break;
                         case 1:
                             currLine[roadIndex] = UnityEngine.Random.Range(5, 8);
-                            StartCoroutine(BuildLine(currLine));
+                            StartCoroutine(BuildLine());
                             prevLineRotation = Rotation.None;
                             return;
                     }
@@ -195,7 +204,7 @@ public class MapGenerator : MonoBehaviour
                             switch (voxelInd)
                             {
                                 case 2:
-                                    StartCoroutine(BuildLine(currLine));
+                                    StartCoroutine(BuildLine());
                                     prevLineRotation = Rotation.None;
                                     return;
                                 case 3:
@@ -206,7 +215,7 @@ public class MapGenerator : MonoBehaviour
                             break;
                         case 1:
                             currLine[roadIndex] = UnityEngine.Random.Range(5, 8);
-                            StartCoroutine(BuildLine(currLine));
+                            StartCoroutine(BuildLine());
                             prevLineRotation = Rotation.None;
                             return;
                     }
@@ -226,7 +235,7 @@ public class MapGenerator : MonoBehaviour
                             switch (voxelInd)
                             {
                                 case 2:
-                                    StartCoroutine(BuildLine(currLine));
+                                    StartCoroutine(BuildLine());
                                     prevLineRotation = Rotation.None;
                                     return;
                                 case 3:
@@ -241,7 +250,7 @@ public class MapGenerator : MonoBehaviour
                             break;
                         case 1:
                             currLine[roadIndex] = UnityEngine.Random.Range(5, 8);
-                            StartCoroutine(BuildLine(currLine));
+                            StartCoroutine(BuildLine());
                             prevLineRotation = Rotation.None;
                             return;
                     }
@@ -267,7 +276,7 @@ public class MapGenerator : MonoBehaviour
                                         return;
                                     case 1:
                                         currLine[lastVoxelInd + 1] = 4;
-                                        StartCoroutine(BuildLine(currLine, Rotation.Right));
+                                        StartCoroutine(BuildLine(Rotation.Right));
                                         return;
                                 }
                                 break;
@@ -283,7 +292,7 @@ public class MapGenerator : MonoBehaviour
                                 return;
                             case 1:
                                 currLine[lastVoxelInd + 1] = 4;
-                                StartCoroutine(BuildLine(currLine, Rotation.Right));
+                                StartCoroutine(BuildLine(Rotation.Right));
                                 return;
                         }
                         break;
@@ -291,7 +300,7 @@ public class MapGenerator : MonoBehaviour
                     else
                     {
                         currLine[lastVoxelInd + 1] = 4;
-                        StartCoroutine(BuildLine(currLine, Rotation.Right));
+                        StartCoroutine(BuildLine(Rotation.Right));
                         return;
                     }
                     break;
@@ -316,7 +325,7 @@ public class MapGenerator : MonoBehaviour
                                         return;
                                     case 1:
                                         currLine[lastVoxelInd - 1] = 3;
-                                        StartCoroutine(BuildLine(currLine, Rotation.Left));
+                                        StartCoroutine(BuildLine(Rotation.Left));
                                         return;
                                 }
                                 break;
@@ -332,7 +341,7 @@ public class MapGenerator : MonoBehaviour
                                 return;
                             case 1:
                                 currLine[lastVoxelInd - 1] = 3;
-                                StartCoroutine(BuildLine(currLine, Rotation.Left));
+                                StartCoroutine(BuildLine(Rotation.Left));
                                 return;
                         }
                         break;
@@ -340,7 +349,7 @@ public class MapGenerator : MonoBehaviour
                     else
                     {
                         currLine[lastVoxelInd - 1] = 3;
-                        StartCoroutine(BuildLine(currLine, Rotation.Left));
+                        StartCoroutine(BuildLine(Rotation.Left));
                         return;
                     }
                     break;

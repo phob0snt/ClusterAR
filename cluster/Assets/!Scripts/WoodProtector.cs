@@ -2,16 +2,22 @@ using Microsoft.MixedReality.Toolkit.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.HID;
 
 public class WoodProtector : Protector
 {
     public override ProtectorType type => ProtectorType.Wood;
-
+    [SerializeField] private GameObject prefab;
     private RaycastHit hit;
     private bool isMoving;
+    private Vector3 startPos;
 
+    private void Awake()
+    {
+        startPos = transform.position;
+    }
     private void Update()
     {
         Debug.DrawRay(transform.localPosition, -transform.up * 0.083f);
@@ -40,13 +46,15 @@ public class WoodProtector : Protector
         isMoving = true;
         float totalMovementTime = 70f;
         float currMovenentTime = 0f;
-        Vector3 dest = hit.transform.position;
-        while (Vector3.Distance(transform.position, dest) > 0.0001f)
+        while (Vector3.Distance(transform.position, hit.transform.position) > 0.0001f)
         {
             currMovenentTime += Time.deltaTime;
-            transform.position = Vector3.Lerp(transform.position, dest, currMovenentTime / totalMovementTime);
+            transform.position = Vector3.Lerp(transform.position, hit.transform.position, currMovenentTime / totalMovementTime);
             yield return null;
         }
+        Debug.Log("SOSI");
+        Instantiate(prefab, startPos, Quaternion.identity).transform.parent = transform.parent;
+        transform.parent = hit.transform.parent;
         GetComponent<ObjectManipulator>().enabled = false;
         isMoving = false;
     }

@@ -1,3 +1,4 @@
+using Microsoft.MixedReality.Toolkit.Utilities;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,11 +19,12 @@ public class FrogScript : MonoBehaviour
 
     void Update()
     {
+        
         if (!isMoving)
         {
             RaycastHit hit;
             Physics.Raycast(transform.position, -transform.up, out hit, 0.05f);
-            Debug.DrawRay(transform.position, -transform.right * 0.05f);
+            //Debug.DrawRay(transform.position, -transform.right * 0.05f);
 
             try
             {
@@ -65,6 +67,7 @@ public class FrogScript : MonoBehaviour
 
     private IEnumerator Move(Directions dir)
     {
+        Quaternion rot;
         isMoving = true;
         switch (dir)
         {
@@ -75,13 +78,21 @@ public class FrogScript : MonoBehaviour
                 transform.eulerAngles = new Vector3(0, transform.eulerAngles.y - 90, 0);
                 break;
         }
-        float totalMovementTime = 50f;
+        if (transform.rotation.eulerAngles.y > 200)
+            rot = Quaternion.Euler(-45, 0, 0);
+        else if (transform.rotation.eulerAngles.y > 45)
+            rot = Quaternion.Euler(45, 0, 0);
+        else
+            rot = Quaternion.Euler(0, 0, 45);
+        float totalMovementTime = 20f;
         float currMovenentTime = 0f;
-        Vector3 dest = transform.position - transform.right * 0.06f;
-        while (Vector3.Distance(transform.position, dest) > 0.0001f)
+        RaycastHit hit;
+        Physics.Raycast(transform.position, rot * -transform.right, out hit, 0.5f);
+        
+        while (Vector3.Distance(transform.position, new Vector3(hit.transform.position.x, hit.transform.position.y + 0.075f, hit.transform.position.z)) > 0.0001f)
         {
             currMovenentTime += Time.deltaTime;
-            transform.position = Vector3.Lerp(transform.position, dest, currMovenentTime / totalMovementTime);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(hit.transform.position.x, hit.transform.position.y + 0.075f, hit.transform.position.z), currMovenentTime / totalMovementTime);
             yield return null;
         }
         yield return new WaitForSeconds(0.5f);
