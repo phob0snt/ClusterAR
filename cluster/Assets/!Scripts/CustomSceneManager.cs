@@ -50,7 +50,9 @@ public class CustomSceneManager : MonoBehaviour
                     break;
                 case "Banger":
                     GameManager.CurrentGamemode = BangerManager.Instance;
-                    Debug.Log(GameManager.CurrentGamemode);
+                    break;
+                case "DeathRoad":
+                    GameManager.CurrentGamemode = DeathRoadManager.Instance;
                     break;
             }
             GameManager.CurrentGamemode.ConfigureSession();
@@ -64,6 +66,9 @@ public class CustomSceneManager : MonoBehaviour
                     break;
                 case "Banger":
                     GameManager.CurrentGamemode = BangerManager.Instance;
+                    break;
+                case "DeathRoad":
+                    GameManager.CurrentGamemode = DeathRoadManager.Instance;
                     break;
             }
             GameManager.CurrentGamemode.ConfigureSession();

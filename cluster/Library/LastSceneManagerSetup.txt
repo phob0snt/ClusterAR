@@ -3,11 +3,15 @@ sceneSetups:
   isLoaded: 1
   isActive: 1
   isSubScene: 0
-- path: Assets/DropNCatch.unity
+- path: Assets/Scenes/DropNCatch.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0
-- path: Assets/Banger.unity
+- path: Assets/Scenes/Banger.unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
+- path: Assets/Scenes/DeathRoad.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0

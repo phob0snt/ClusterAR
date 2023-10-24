@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HandMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject shop;
     public void ExitGamemode()
     {
         switch (GameManager.CurrentGamemode)
@@ -14,7 +15,15 @@ public class HandMenu : MonoBehaviour
             case (BangerManager):
                 BangerManager.Instance.EndSession();
                 break;
+            case (DeathRoadManager):
+                DeathRoadManager.Instance.EndSession();
+                break;
         }
         
+    }
+
+    public void OpenShop()
+    {
+        shop.SetActive(true);
     }
 }

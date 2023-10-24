@@ -23,6 +23,9 @@ public class ScoreMenuScript : MonoBehaviour
             case DNCManager:
                 tmp.text = $"Score: {BallCounter.Score}";
                 break;
+            case DeathRoadManager:
+                tmp.text = $"Score: {FrogScript.Score}";
+                break;
         }
         
     }
