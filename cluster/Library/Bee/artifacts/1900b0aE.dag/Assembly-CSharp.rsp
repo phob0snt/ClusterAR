@@ -463,14 +463,16 @@
 "Assets/!Scripts/GameManager.cs"
 "Assets/!Scripts/GameMode.cs"
 "Assets/!Scripts/HandMenu.cs"
-"Assets/!Scripts/HandSurface.cs"
+"Assets/!Scripts/HandWaveController.cs"
 "Assets/!Scripts/ScoreMenuScript.cs"
 "Assets/!Scripts/Shop.cs"
-"Assets/Class1.cs"
+"Assets/HandAxisCalculator.cs"
+"Assets/LevelGenerator.cs"
 "Assets/Samples/Mixed Reality Toolkit Examples/2.8.3/Demos - ScrollingObjectCollection/Scripts/ScrollableListPopulator.cs"
 "Assets/Samples/Mixed Reality Toolkit Examples/2.8.3/Demos - ScrollingObjectCollection/Scripts/ScrollablePagination.cs"
 "Assets/Samples/Mixed Reality Toolkit Examples/2.8.3/Demos - SpatialAwareness/Scripts/ClearSpatialObservations.cs"
 "Assets/Samples/Mixed Reality Toolkit Examples/2.8.3/Demos - SpatialAwareness/Scripts/ShowPlaneFindingInstructions.cs"
+"Assets/Waver.cs"
 -langversion:9.0
 
 /deterministic

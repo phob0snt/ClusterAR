@@ -7,19 +7,13 @@ using UnityEngine;
 public class Waver : MonoBehaviour
 {
     public enum Dirs { Up, Right, Left, Down };
-    private bool loaded;
+    public static bool IsMoving;
     private void Awake()
     {
-        //HandWaveController.OnWavingHand.AddListener(MoveByDir);
+        HandWaveController.OnWavingHand.AddListener(MoveByDir);
     }
     void Update()
     {
-        if (!loaded)
-        {
-            if (HandWaveController.Instance != null)
-                HandWaveController.OnWavingHand.AddListener(MoveByDir);
-            loaded = true;
-        }
         
         Debug.DrawRay(transform.position, transform.up);
         //Debug.Log(transform.forward);
@@ -32,6 +26,7 @@ public class Waver : MonoBehaviour
 
     private IEnumerator MovePlayer(Dirs dir)
     {
+        IsMoving = true;
         RaycastHit hit;
         float currLerpMoment = 0f;
         float lerpTime = 50f;
@@ -39,7 +34,7 @@ public class Waver : MonoBehaviour
         {
             case Dirs.Up:
                 transform.eulerAngles = Vector3.zero;
-                Physics.Raycast(transform.position, transform.up, out hit, 1);
+                Physics.Raycast(transform.position, transform.up, out hit, 10);
                 while (Vector3.Distance(transform.position, new Vector3(hit.transform.position.x, hit.transform.position.y - 0.06f, hit.transform.position.z)) > 0)
                 {
                     transform.position = Vector3.Lerp(transform.position, new Vector3(hit.transform.position.x, hit.transform.position.y - 0.06f, hit.transform.position.z), currLerpMoment);
@@ -53,7 +48,7 @@ public class Waver : MonoBehaviour
                 break;
             case Dirs.Down:
                 transform.eulerAngles = new Vector3(0, 0, -180);
-                Physics.Raycast(transform.position, transform.up, out hit, 1);
+                Physics.Raycast(transform.position, transform.up, out hit, 10);
                 Debug.Log(hit.transform.position);
                 Debug.Log(Vector3.Distance(transform.position, new Vector3(hit.transform.position.x, hit.transform.position.y + 0.06f, hit.transform.position.z)));
                 if (Vector3.Distance(transform.position, new Vector3(hit.transform.position.x, hit.transform.position.y + 0.06f, hit.transform.position.z)) > 0.05f)
@@ -72,7 +67,7 @@ public class Waver : MonoBehaviour
                 break;
             case Dirs.Right:
                 transform.eulerAngles = new Vector3(0, 0, -90);
-                Physics.Raycast(transform.position, transform.up, out hit, 1);
+                Physics.Raycast(transform.position, transform.up, out hit, 10);
                 while (Vector3.Distance(transform.position, new Vector3(hit.transform.position.x - 0.06f, hit.transform.position.y, hit.transform.position.z)) > 0)
                 {
                     transform.position = Vector3.Lerp(transform.position, new Vector3(hit.transform.position.x - 0.06f, hit.transform.position.y, hit.transform.position.z), currLerpMoment);
@@ -86,7 +81,7 @@ public class Waver : MonoBehaviour
                 break;
             case Dirs.Left:
                 transform.eulerAngles = new Vector3(0, 0, 90);
-                Physics.Raycast(transform.position, transform.up, out hit, 1);
+                Physics.Raycast(transform.position, transform.up, out hit, 10);
                 while (Vector3.Distance(transform.position, new Vector3(hit.transform.position.x + 0.06f, hit.transform.position.y, hit.transform.position.z)) > 0)
                 {
                     transform.position = Vector3.Lerp(transform.position, new Vector3(hit.transform.position.x + 0.06f, hit.transform.position.y, hit.transform.position.z), currLerpMoment);
@@ -99,7 +94,7 @@ public class Waver : MonoBehaviour
                 }
                 break;
         }
-        yield return new WaitForSeconds(1);
+        IsMoving = false;
     }
 
 }
