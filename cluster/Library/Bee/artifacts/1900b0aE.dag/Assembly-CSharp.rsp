@@ -122,6 +122,7 @@
 -define:USE_INPUT_SYSTEM_POSE_CONTROL
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/Plugins/Demigiant/DOTween/DOTween.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.10f1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
@@ -330,6 +331,7 @@
 -r:"Library/PackageCache/com.unity.nuget.newtonsoft-json@3.2.1/Runtime/Newtonsoft.Json.dll"
 -r:"Library/PackageCache/com.unity.testtools.codecoverage@1.2.4/lib/ReportGenerator/ReportGeneratorMerged.dll"
 -r:"Library/PackageCache/com.unity.visualscripting@1.9.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-firstpass.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/FigmaToolkit.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Microsoft.MixedReality.OpenXR.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Microsoft.MixedReality.OpenXR.ref.dll"
@@ -466,6 +468,8 @@
 "Assets/!Scripts/HandWaveController.cs"
 "Assets/!Scripts/ScoreMenuScript.cs"
 "Assets/!Scripts/Shop.cs"
+"Assets/Coin.cs"
+"Assets/CoinCounter.cs"
 "Assets/HandAxisCalculator.cs"
 "Assets/LevelGenerator.cs"
 "Assets/Samples/Mixed Reality Toolkit Examples/2.8.3/Demos - ScrollingObjectCollection/Scripts/ScrollableListPopulator.cs"
@@ -473,6 +477,7 @@
 "Assets/Samples/Mixed Reality Toolkit Examples/2.8.3/Demos - SpatialAwareness/Scripts/ClearSpatialObservations.cs"
 "Assets/Samples/Mixed Reality Toolkit Examples/2.8.3/Demos - SpatialAwareness/Scripts/ShowPlaneFindingInstructions.cs"
 "Assets/Waver.cs"
+"Assets/WaverManager.cs"
 -langversion:9.0
 
 /deterministic

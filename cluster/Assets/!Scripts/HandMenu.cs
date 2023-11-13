@@ -18,6 +18,9 @@ public class HandMenu : MonoBehaviour
             case (DeathRoadManager):
                 DeathRoadManager.Instance.EndSession();
                 break;
+            case (WaverManager):
+                WaverManager.Instance.EndSession();
+                break;
         }
         
     }

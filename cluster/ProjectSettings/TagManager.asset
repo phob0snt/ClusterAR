@@ -15,6 +15,9 @@ TagManager:
   - DangerWater
   - DangerHole
   - Protector
+  - Waver
+  - Coin
+  - WaverWall
   layers:
   - Default
   - TransparentFX

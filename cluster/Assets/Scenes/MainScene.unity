@@ -192,16 +192,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 763741472937285476, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 763741472937285476, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
-      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 1927869403}
+    - target: {fileID: 763741472937285476, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChangeGamemode
       objectReference: {fileID: 0}
     - target: {fileID: 763741472937285476, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MapGenerator, Assembly-CSharp
+      value: CustomSceneManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 763741472937285476, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Waver
       objectReference: {fileID: 0}
     - target: {fileID: 908485784614504773, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -261,7 +269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2313261133033253179, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.564
+      value: 0.9100001
       objectReference: {fileID: 0}
     - target: {fileID: 2313261133033253179, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
       propertyPath: m_LocalRotation.w
@@ -442,6 +450,10 @@ PrefabInstance:
     - target: {fileID: 7915729865660284710, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915729866667665463, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
+      propertyPath: m_text
+      value: Waver
       objectReference: {fileID: 0}
     - target: {fileID: 7915729866667665463, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
       propertyPath: m_textAlignment

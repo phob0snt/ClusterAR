@@ -54,6 +54,9 @@ public class CustomSceneManager : MonoBehaviour
                 case "DeathRoad":
                     GameManager.CurrentGamemode = DeathRoadManager.Instance;
                     break;
+                case "Waver":
+                    GameManager.CurrentGamemode = WaverManager.Instance;
+                    break;
             }
             GameManager.CurrentGamemode.ConfigureSession();
         }
@@ -69,6 +72,9 @@ public class CustomSceneManager : MonoBehaviour
                     break;
                 case "DeathRoad":
                     GameManager.CurrentGamemode = DeathRoadManager.Instance;
+                    break;
+                case "Waver":
+                    GameManager.CurrentGamemode = WaverManager.Instance;
                     break;
             }
             GameManager.CurrentGamemode.ConfigureSession();
