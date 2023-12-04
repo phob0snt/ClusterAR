@@ -1,3 +1,4 @@
+using DG.Tweening;
 using Microsoft.MixedReality.Toolkit.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ public class WoodProtector : Protector
     private bool isMoving;
     private Vector3 startPos;
 
-    private void Awake()
+    public void SetPos()
     {
         startPos = transform.position;
     }
@@ -46,6 +47,7 @@ public class WoodProtector : Protector
         isMoving = true;
         float totalMovementTime = 70f;
         float currMovenentTime = 0f;
+        transform.DORotate(Vector3.zero, 1);
         while (Vector3.Distance(transform.position, hit.transform.position) > 0.0001f)
         {
             currMovenentTime += Time.deltaTime;

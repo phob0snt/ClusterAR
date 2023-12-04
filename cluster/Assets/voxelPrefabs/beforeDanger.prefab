@@ -69,6 +69,10 @@ PrefabInstance:
       value: beforeDanger
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7bfdf81164cc12c4db96c501350bae33, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7bfdf81164cc12c4db96c501350bae33, type: 3}
       propertyPath: m_TagString
       value: BeforeDanger
       objectReference: {fileID: 0}
@@ -121,3 +125,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c9c2a7d7b674b44b98b7798637010cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isProtected: 0

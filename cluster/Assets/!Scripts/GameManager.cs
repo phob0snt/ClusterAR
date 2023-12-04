@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public static GameMode CurrentGamemode;
     [SerializeField] private GameObject _mainMenu;
+    public Transform playerPos;
 
     private void Awake()
     {

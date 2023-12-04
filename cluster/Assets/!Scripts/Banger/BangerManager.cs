@@ -7,6 +7,9 @@ public class BangerManager : GameMode
 
     public static BangerManager Instance;
     [SerializeField] public List<BangerHead> heads;
+    [SerializeField] private GameObject hammer;
+    [SerializeField] private Transform sceneCollider;
+    [SerializeField] private GameObject sceneSetButton;
 
     private void OnEnable()
     {
@@ -28,13 +31,20 @@ public class BangerManager : GameMode
         {
             Instance = this;
         }
+        hammer.GetComponent<Rigidbody>().isKinematic = true;
+    }
+
+    public void StartSession()
+    {
+        StartRaisingHeads();
+        BangerHead.isRaising = true;
+        sceneSetButton.SetActive(false);
+        hammer.GetComponent<Rigidbody>().isKinematic = false;
     }
 
 
     public override void ConfigureSession()
     {
-        StartRaisingHeads();
-        BangerHead.isRaising = true;
         GameManager.HideMainMenu(true);
     }
 

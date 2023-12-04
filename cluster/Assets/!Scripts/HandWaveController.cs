@@ -10,6 +10,10 @@ public class HandWaveController : MonoBehaviour
 
     public static UnityEvent<Waver.Dirs> OnWavingHand = new();
 
+    private bool canWave;
+
+    private GameObject hand;
+
     private void Awake()
     {
         if (Instance != null)
@@ -22,9 +26,10 @@ public class HandWaveController : MonoBehaviour
         }
     }
 
-    private GameObject hand;
+    
     private void Update()
     {
+        canWave = WaverManager.Instance.CanWave;
         if (hand == null)
         {
             if (GameObject.Find("Left_ConicalGrabPointer(Clone)"))
@@ -32,7 +37,7 @@ public class HandWaveController : MonoBehaviour
                 hand = GameObject.Find("Left_ConicalGrabPointer(Clone)");
                 hand.AddComponent<HandAxisCalculator>();
             }
-            else
+            else if (canWave)
             {
                 if (Input.GetKeyDown(KeyCode.S) && !Waver.IsMoving)
                 {
@@ -54,7 +59,7 @@ public class HandWaveController : MonoBehaviour
             }
 
         }
-        else
+        else if (canWave)
         {
             Vector3 surfaceNormal = hand.transform.up;
             Debug.DrawRay(hand.transform.position, surfaceNormal);
@@ -86,7 +91,8 @@ public class HandWaveController : MonoBehaviour
                 if (HandAxisCalculator.handSpeed > 1)
                     OnWavingHand.Invoke(Waver.Dirs.Right);
             }
-            
+
         }
+        
     }
 }

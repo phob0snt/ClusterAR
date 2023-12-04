@@ -3,13 +3,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class FrogScript : MonoBehaviour
 {
     private bool isMoving;
     public static int Score;
+    public bool sceneIsSet;
 
     enum Directions
     {
@@ -20,46 +20,49 @@ public class FrogScript : MonoBehaviour
 
     void Update()
     {
-        
-        if (!isMoving)
+        if (sceneIsSet)
         {
-            RaycastHit hit;
-            Physics.Raycast(transform.position, -transform.up, out hit, 0.05f);
-            //Debug.DrawRay(transform.position, -transform.right * 0.05f);
-
-            try
+            if (!isMoving)
             {
-                switch (hit.transform.gameObject.tag)
+                RaycastHit hit;
+                Physics.Raycast(transform.position, -transform.up, out hit, 0.05f);
+                //Debug.DrawRay(transform.position, -transform.right * 0.05f);
+
+                try
                 {
-                    case "Forward":
-                        StartCoroutine(Move(Directions.Forward));
-                        break;
-                    case "Right":
-                        StartCoroutine(Move(Directions.Right));
-                        break;
-                    case "Left":
-                        StartCoroutine(Move(Directions.Left));
-                        break;
-                    case "BeforeDanger":
-                        if (hit.transform.gameObject.GetComponent<ProtectorState>().isProtected)
+                    switch (hit.transform.gameObject.tag)
+                    {
+                        case "Forward":
                             StartCoroutine(Move(Directions.Forward));
-                        break;
-                    case "Protector":
-                        if (hit.transform.gameObject.GetComponent<Protector>().IsCorrect)
-                        {
+                            break;
+                        case "Right":
+                            StartCoroutine(Move(Directions.Right));
+                            break;
+                        case "Left":
+                            StartCoroutine(Move(Directions.Left));
+                            break;
+                        case "BeforeDanger":
+                            if (hit.transform.gameObject.GetComponent<ProtectorState>().isProtected)
+                                StartCoroutine(Move(Directions.Forward));
+                            break;
+                        case "Protector":
+                            if (hit.transform.gameObject.GetComponent<Protector>().IsCorrect)
+                            {
+                                StartCoroutine(Move(Directions.Forward));
+                                Score += 4;
+                            }
+                            else
+                                Death();
+                            break;
+                        case "AfterDanger":
                             StartCoroutine(Move(Directions.Forward));
-                            Score += 4;
-                        }
-                        else
-                            Death();
-                        break;
-                    case "AfterDanger":
-                        StartCoroutine(Move(Directions.Forward));
-                        break;
+                            break;
+                    }
                 }
+                catch { }
             }
-            catch { }
         }
+        
     }
 
     private void Death()

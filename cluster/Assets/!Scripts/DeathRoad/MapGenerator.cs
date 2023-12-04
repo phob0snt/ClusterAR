@@ -44,12 +44,11 @@ public class MapGenerator : MonoBehaviour
         {
             voxels.Add(i, voxelPrefabs[i]);
         }
-        Generate();
     }
 
     private void Update()
     {
-        Debug.Log(numOfLine);
+        //Debug.Log(numOfLine);
     }
 
     public void Generate()
@@ -67,6 +66,7 @@ public class MapGenerator : MonoBehaviour
                 currLine[i] = 1;
             GameObject voxel = Instantiate(voxelPrefabs[currLine[i]], new Vector3(transform.position.x - 0.06f * numOfLine, transform.position.y, transform.position.z + 0.06f * i), Quaternion.identity);
             voxel.transform.parent = PlaySpace;
+            voxel.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
             if (i == 0)
                 voxel.transform.eulerAngles = new Vector3(0, 180, 0);
             

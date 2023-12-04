@@ -5,13 +5,17 @@ using UnityEngine;
 public class Moving : MonoBehaviour
 {
     private bool isMoving = false;
+    public bool CanMove;
     public float moveDelay = 2f;
     [SerializeField] private MapGenerator gen;
 
     private void Update()
     {
-        if (!isMoving)
-            StartCoroutine(Move());
+        if (CanMove)
+        {
+            if (!isMoving)
+                StartCoroutine(Move());
+        }
     }
     private IEnumerator Move()
     {

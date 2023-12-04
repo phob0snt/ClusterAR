@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638309786466177310
-    m_Hash: 3680273205
+      ticks: 638363511458862147
+    m_Hash: 516143315
   m_LockFileStatus:
     m_FilePath: "C:/Users/\u0418\u0433\u043E\u0440\u044C/Documents/GitHub/ClusterAR/cluster/Packages/packages-lock.json"
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638309786936520063
-    m_Hash: 2256675370
+      ticks: 638363511459662176
+    m_Hash: 981065737
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -103,6 +103,20 @@ m_LocalPackages:
       serializedVersion: 2
       ticks: 638309071295408309
     m_Hash: 4011041438
+  - m_FilePath: "C:\\Users\\\u0418\u0433\u043E\u0440\u044C\\Documents\\GitHub\\ClusterAR\\cluster\\Packages\\MixedReality\\com.microsoft.mixedreality.toolkit.tools-2.8.3.tgz/package.json"
+    m_PathExists: 0
+    m_ContentTrackingEnabled: 1
+    m_ModificationDate:
+      serializedVersion: 2
+      ticks: 0
+    m_Hash: 0
+  - m_FilePath: "C:\\Users\\\u0418\u0433\u043E\u0440\u044C\\Documents\\GitHub\\ClusterAR\\cluster\\Packages\\MixedReality\\com.microsoft.mixedreality.toolkit.tools-2.8.3.tgz"
+    m_PathExists: 1
+    m_ContentTrackingEnabled: 1
+    m_ModificationDate:
+      serializedVersion: 2
+      ticks: 638360896624890849
+    m_Hash: 1297217339
 m_ProjectPath: "C:/Users/\u0418\u0433\u043E\u0440\u044C/Documents/GitHub/ClusterAR/cluster/Packages"
 m_EditorVersion: 2022.3.10f1 (ff3792e53c62)
 m_ResolvedPackages:
@@ -177,7 +191,7 @@ m_ResolvedPackages:
   - name: com.unity.modules.unitywebrequest
     version: 1.0.0
   - name: com.unity.xr.openxr
-    version: 1.8.2
+    version: 1.9.1
   keywords:
   - microsoft
   - mixed
@@ -594,6 +608,81 @@ m_ResolvedPackages:
     deprecationMessage: 
   isDeprecated: 0
   deprecationMessage: 
+- packageId: "com.microsoft.mixedreality.toolkit.tools@file:C:\\Users\\\u0418\u0433\u043E\u0440\u044C\\Documents\\GitHub\\ClusterAR\\cluster\\Packages\\MixedReality\\com.microsoft.mixedreality.toolkit.tools-2.8.3.tgz"
+  testable: 0
+  isDirectDependency: 1
+  version: 2.8.3
+  source: 6
+  resolvedPath: "C:\\Users\\\u0418\u0433\u043E\u0440\u044C\\Documents\\GitHub\\ClusterAR\\cluster\\Library\\PackageCache\\com.microsoft.mixedreality.toolkit.tools@650cce437d92"
+  assetPath: Packages/com.microsoft.mixedreality.toolkit.tools
+  name: com.microsoft.mixedreality.toolkit.tools
+  displayName: Mixed Reality Toolkit Tools
+  author:
+    name: Microsoft
+    email: 
+    url: 
+  category: 
+  type: 
+  description: Tools for the Microsoft Mixed Reality Toolkit
+  status: 0
+  errors: []
+  versions:
+    all: []
+    compatible: []
+    recommended: 
+    deprecated: []
+  dependencies:
+  - name: com.microsoft.mixedreality.toolkit.foundation
+    version: 2.8.3
+  resolvedDependencies:
+  - name: com.microsoft.mixedreality.toolkit.foundation
+    version: 2.8.3
+  - name: com.microsoft.mixedreality.toolkit.standardassets
+    version: 2.8.3
+  - name: com.unity.textmeshpro
+    version: 3.0.6
+  - name: com.unity.ugui
+    version: 1.0.0
+  - name: com.unity.modules.ui
+    version: 1.0.0
+  - name: com.unity.modules.imgui
+    version: 1.0.0
+  keywords:
+  - mrtk
+  - microsoft
+  - mixed
+  - reality
+  - augmented
+  - virtual
+  - xr
+  - hololens
+  - tools
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: https://github.com/microsoft/MixedRealityToolkit-Unity.git
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
 - packageId: com.unity.ai.navigation@1.1.4
   testable: 0
   isDirectDependency: 1
@@ -627,6 +716,7 @@ m_ResolvedPackages:
     - 1.1.5
     - 2.0.0-pre.3
     - 2.0.0-pre.4
+    - 2.0.0
     compatible:
     - 1.1.4
     - 1.1.5
@@ -1226,6 +1316,7 @@ m_ResolvedPackages:
     - 1.3.7
     - 1.3.8
     - 1.3.9
+    - 1.4.0
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -1241,6 +1332,7 @@ m_ResolvedPackages:
     - 1.3.7
     - 1.3.8
     - 1.3.9
+    - 1.4.0
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -1807,12 +1899,12 @@ m_ResolvedPackages:
     deprecationMessage: 
   isDeprecated: 0
   deprecationMessage: 
-- packageId: com.unity.xr.openxr@1.8.2
+- packageId: com.unity.xr.openxr@1.9.1
   testable: 0
   isDirectDependency: 1
-  version: 1.8.2
+  version: 1.9.1
   source: 1
-  resolvedPath: "C:\\Users\\\u0418\u0433\u043E\u0440\u044C\\Documents\\GitHub\\ClusterAR\\cluster\\Library\\PackageCache\\com.unity.xr.openxr@1.8.2"
+  resolvedPath: "C:\\Users\\\u0418\u0433\u043E\u0440\u044C\\Documents\\GitHub\\ClusterAR\\cluster\\Library\\PackageCache\\com.unity.xr.openxr@1.9.1"
   assetPath: Packages/com.unity.xr.openxr
   name: com.unity.xr.openxr
   displayName: OpenXR Plugin
@@ -1853,17 +1945,19 @@ m_ResolvedPackages:
     - 1.8.0
     - 1.8.1
     - 1.8.2
+    - 1.9.1
     compatible:
     - 1.8.2
+    - 1.9.1
     recommended: 1.8.2
     deprecated: []
   dependencies:
   - name: com.unity.xr.management
-    version: 4.0.1
+    version: 4.4.0
   - name: com.unity.xr.legacyinputhelpers
     version: 2.1.2
   - name: com.unity.inputsystem
-    version: 1.4.4
+    version: 1.6.3
   - name: com.unity.xr.core-utils
     version: 2.1.1
   resolvedDependencies:
@@ -1906,13 +2000,13 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 638259958150000000
-  documentationUrl: https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.8/manual/index.html
+  datePublishedTicks: 638337609010000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.9/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/xr.sdk.openxr.git
-    revision: be41b6db171e2e06fb1bd863b239a7fc7b2f10cf
+    revision: 630b0982955a4b4bbc0ee8440739c579544bbd80
     path: 
   unityLifecycle:
     version: 1.8.2
@@ -4122,9 +4216,11 @@ m_ResolvedPackages:
     - 1.6.3
     - 1.7.0
     - 1.8.0-pre.1
+    - 1.8.0-pre.2
     compatible:
     - 1.7.0
     - 1.8.0-pre.1
+    - 1.8.0-pre.2
     recommended: 1.7.0
     deprecated: []
   dependencies:
@@ -4773,6 +4869,7 @@ m_ResolvedPackages:
     - 4.2.6
     - 4.2.7
     - 4.2.8
+    - 4.2.9
     - 5.0.0-pre.5
     - 5.0.0-pre.6
     - 5.0.0-pre.7
@@ -4796,6 +4893,7 @@ m_ResolvedPackages:
     - 5.1.0-pre.10
     - 5.1.0
     - 6.0.0-pre.3
+    - 6.0.0-pre.4
     compatible:
     - 5.0.7
     - 5.1.0-pre.1

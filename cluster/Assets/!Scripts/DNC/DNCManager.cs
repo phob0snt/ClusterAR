@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DNCManager : GameMode
 {
     public static DNCManager Instance;
+    [SerializeField] private Transform bucketPos;
+    [SerializeField] private Transform sceneCollider;
+    [SerializeField] private GameObject sceneSetButton;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -21,8 +26,14 @@ public class DNCManager : GameMode
     public override void ConfigureSession()
     {
         GameManager.HideMainMenu(true);
+    }
+
+    public void StartSession()
+    {
         SpawnBucket(DNCSkins.Instance.GetBucket());
-        EggSpawner.Instance.StartSpawningEggs(DNCSkins.Instance.GetEgg());
+        EggSpawner.Instance.StartSpawningEggs();
+        sceneSetButton.SetActive(false);
+        
     }
 
     public override void EndSession()
@@ -34,7 +45,8 @@ public class DNCManager : GameMode
     private void SpawnBucket(GameObject bucket)
     {
         Vector3 player = GameObject.Find("Player").transform.position;
-        var buck = Instantiate(bucket, new Vector3(player.x, player.y - 0.2f, player.z + 0.3f), Quaternion.identity);
+        var buck = Instantiate(bucket, bucketPos.position, Quaternion.identity);
         SceneManager.MoveGameObjectToScene(buck, SceneManager.GetSceneByName("DropNCatch"));
+        buck.transform.SetParent(sceneCollider);
     }
 }

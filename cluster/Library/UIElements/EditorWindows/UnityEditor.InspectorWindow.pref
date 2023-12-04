@@ -13,32 +13,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Keys:
-  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-raycastLayerMasks__UnityEngine.UIElements.ListView
-  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-targetRenderers__UnityEngine.UIElements.ListView
+  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-voxelPrefabs__UnityEngine.UIElements.ListView
   - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-Buckets__UnityEngine.UIElements.ListView
   - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-Eggs__UnityEngine.UIElements.ListView
-  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-SkinManagers__UnityEngine.UIElements.ListView
-  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-_menus__UnityEngine.UIElements.ListView
-  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-heads__UnityEngine.UIElements.ListView
-  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-frameRateColors__UnityEngine.UIElements.ListView
-  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-voxelPrefabs__UnityEngine.UIElements.ListView
-  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-lineRenderers__UnityEngine.UIElements.ListView
-  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-SourceDownIds__UnityEngine.UIElements.ListView
-  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-cursorStateData__UnityEngine.UIElements.ListView
-  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-cursorContextData__UnityEngine.UIElements.ListView
-  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-pokeLayerMasks__UnityEngine.UIElements.ListView
+  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-eggSpawnPoints__UnityEngine.UIElements.ListView
+  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-buckets__UnityEngine.UIElements.ListView
+  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-eggs__UnityEngine.UIElements.ListView
   m_Values:
   - '{}'
   - '{}'
   - '{}'
-  - '{}'
-  - '{}'
-  - '{}'
-  - '{"m_ShowAlternatingRowBackgrounds":0,"serializedVirtualizationData":{"scrollOffset":{"x":0.0,"y":0.0},"firstVisibleIndex":0,"contentPadding":0.0,"contentHeight":259.2000427246094,"anchoredItemIndex":0,"anchorOffset":0.0}}'
-  - '{}'
-  - '{}'
-  - '{}'
-  - '{}'
-  - '{}'
-  - '{}'
-  - '{}'
+  - '{"m_ShowAlternatingRowBackgrounds":0,"serializedVirtualizationData":{"scrollOffset":{"x":0.0,"y":0.0},"firstVisibleIndex":0,"contentPadding":0.0,"contentHeight":0.0,"anchoredItemIndex":0,"anchorOffset":0.0}}'
+  - '{"m_ShowAlternatingRowBackgrounds":0,"serializedVirtualizationData":{"scrollOffset":{"x":0.0,"y":0.0},"firstVisibleIndex":0,"contentPadding":0.0,"contentHeight":21.600000381469728,"anchoredItemIndex":0,"anchorOffset":0.0}}'
+  - '{"m_ShowAlternatingRowBackgrounds":0,"serializedVirtualizationData":{"scrollOffset":{"x":0.0,"y":0.0},"firstVisibleIndex":0,"contentPadding":0.0,"contentHeight":86.4000015258789,"anchoredItemIndex":0,"anchorOffset":0.0}}'

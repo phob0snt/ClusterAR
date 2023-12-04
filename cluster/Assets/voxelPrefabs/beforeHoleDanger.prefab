@@ -69,6 +69,10 @@ PrefabInstance:
       value: beforeHoleDanger
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 159362ae8f624c54d95d88b376034a3d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 159362ae8f624c54d95d88b376034a3d, type: 3}
       propertyPath: m_TagString
       value: BeforeDanger
       objectReference: {fileID: 0}

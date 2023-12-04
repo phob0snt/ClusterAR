@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using DG.Tweening;
 
 public class CloudProtector : Protector
 {
@@ -13,7 +14,7 @@ public class CloudProtector : Protector
     private Vector3 startPos;
 
 
-    private void Awake()
+    public void SetPos()
     {
         startPos = transform.position;
     }
@@ -45,6 +46,7 @@ public class CloudProtector : Protector
         isMoving = true;
         float totalMovementTime = 70f;
         float currMovenentTime = 0f;
+        transform.DORotate(Vector3.zero, 1);
         while (Vector3.Distance(transform.position, hit.transform.position) > 0.0001f)
         {
             currMovenentTime += Time.deltaTime;

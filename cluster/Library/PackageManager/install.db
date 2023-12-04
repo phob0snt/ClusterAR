@@ -48,6 +48,14 @@
         "size": 5328617,
         "localPath": "C:\\Users\\Игорь\\Documents\\GitHub\\ClusterAR\\cluster\\Packages\\MixedReality\\com.microsoft.mixedreality.toolkit.standardassets-2.8.3.tgz"
       }
+    },
+    "com.microsoft.mixedreality.toolkit.tools": {
+      "tarball": {
+        "hash": "650cce437d92",
+        "mtime": 1700492862489,
+        "size": 2111115,
+        "localPath": "C:\\Users\\Игорь\\Documents\\GitHub\\ClusterAR\\cluster\\Packages\\MixedReality\\com.microsoft.mixedreality.toolkit.tools-2.8.3.tgz"
+      }
     }
   }
 }

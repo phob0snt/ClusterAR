@@ -6,6 +6,9 @@ public class DeadWall : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
+        if (other.gameObject.CompareTag("Player") || other.gameObject.layer == 6)
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
