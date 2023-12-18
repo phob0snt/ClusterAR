@@ -8,11 +8,14 @@ public class DNCSkins : MonoBehaviour
     public static DNCSkins Instance;
     private int _DNCMoney;
 
-    public enum Bucket { Default}
+    public enum Bucket { Default, Rusty, Normal, Bright}
     public enum Egg { Default, Brown, Green, Rainbow }
     private Dictionary<Bucket, int> bucketsPrices = new Dictionary<Bucket, int>
     {
         { Bucket.Default, 0},
+        { Bucket.Rusty, 10},
+        { Bucket.Normal, 26},
+        { Bucket.Bright, 58}
 
     };
 
@@ -108,6 +111,60 @@ public class DNCSkins : MonoBehaviour
                     SetEgg(Egg.Rainbow);
                     return true;
                 }
+            case "DefaultBucket":
+                SetBucket(Bucket.Default);
+                return true;
+            case "RustyBucket":
+                if (!boughtBuckets[(int)Bucket.Rusty])
+                {
+                    if (bucketsPrices[Bucket.Rusty] <= _DNCMoney)
+                    {
+                        DecreaseMoney(bucketsPrices[Bucket.Rusty]);
+                        SetBucket(Bucket.Rusty);
+                        return true;
+                    }
+                    else
+                        return false;
+                }
+                else
+                {
+                    SetBucket(Bucket.Rusty);
+                    return true;
+                }
+            case "NormalBucket":
+                if (!boughtBuckets[(int)Bucket.Normal])
+                {
+                    if (bucketsPrices[Bucket.Normal] <= _DNCMoney)
+                    {
+                        DecreaseMoney(bucketsPrices[Bucket.Normal]);
+                        SetBucket(Bucket.Normal);
+                        return true;
+                    }
+                    else
+                        return false;
+                }
+                else
+                {
+                    SetBucket(Bucket.Normal);
+                    return true;
+                }
+            case "BrightBucket":
+                if (!boughtBuckets[(int)Bucket.Bright])
+                {
+                    if (bucketsPrices[Bucket.Bright] <= _DNCMoney)
+                    {
+                        DecreaseMoney(bucketsPrices[Bucket.Bright]);
+                        SetBucket(Bucket.Bright);
+                        return true;
+                    }
+                    else
+                        return false;
+                }
+                else
+                {
+                    SetBucket(Bucket.Bright);
+                    return true;
+                }
             default:
                 return false;
         }
@@ -138,6 +195,7 @@ public class DNCSkins : MonoBehaviour
     public void SetBucket(Bucket bucketType)
     {
         currentBucket = buckets[(int)bucketType];
+        DNCManager.Instance.RespawnBucket();
     }
 
     public GameObject GetBucket()

@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/DeathRoad.unity
     guid: 198d9a48143cb1043888d63264446b3e
   - enabled: 1
-    path: Assets/Waver.unity
+    path: Assets/Scenes/Waver.unity
     guid: 96645f58b536ead40b3689379643f815
   m_configObjects:
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: f392cc65262adc146b330185e0ce4d6a, type: 2}

@@ -187,6 +187,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7150b207f62c00b4ca749e7cd4861639, type: 2}
+    - target: {fileID: 569958636886365182, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
+      propertyPath: iconSet
+      value: 
+      objectReference: {fileID: 11400000, guid: cfd7738f89ef9924385fc8eeff936ff1, type: 2}
+    - target: {fileID: 569958636886365182, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
+      propertyPath: iconQuadTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: f48e16aae2be73046b54db5bfe1578b1, type: 3}
     - target: {fileID: 763741472937285476, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -215,6 +223,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7150b207f62c00b4ca749e7cd4861639, type: 2}
+    - target: {fileID: 958555039328662094, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
+      propertyPath: iconSet
+      value: 
+      objectReference: {fileID: 11400000, guid: cfd7738f89ef9924385fc8eeff936ff1, type: 2}
+    - target: {fileID: 958555039328662094, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
+      propertyPath: iconQuadTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: bd16d1fa7770bbe4c85eb4b18625acfc, type: 3}
     - target: {fileID: 1333129552543361702, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
       propertyPath: m_Name
       value: Main Menu
@@ -259,6 +275,14 @@ PrefabInstance:
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: DropNCatch
       objectReference: {fileID: 0}
+    - target: {fileID: 1916916465131294397, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
+      propertyPath: iconSet
+      value: 
+      objectReference: {fileID: 11400000, guid: cfd7738f89ef9924385fc8eeff936ff1, type: 2}
+    - target: {fileID: 1916916465131294397, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
+      propertyPath: iconQuadTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 0f7c8695495a11249b86777b11e3d984, type: 3}
     - target: {fileID: 2313261133033253179, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.029795472
@@ -435,6 +459,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7773655248262073540, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
+      propertyPath: iconSet
+      value: 
+      objectReference: {fileID: 11400000, guid: cfd7738f89ef9924385fc8eeff936ff1, type: 2}
+    - target: {fileID: 7773655248262073540, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
+      propertyPath: iconQuadTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 4699f8e32ac914f4fa18a815fdde9e60, type: 3}
     - target: {fileID: 7824246936468929580, guid: 4cc25867f13a101459aeac0807dc2d30, type: 3}
       propertyPath: eventsToReceive
       value: 0

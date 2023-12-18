@@ -10,6 +10,7 @@ public class DNCManager : GameMode
     [SerializeField] private Transform bucketPos;
     [SerializeField] private Transform sceneCollider;
     [SerializeField] private GameObject sceneSetButton;
+    private GameObject _bucket;
 
     private void Awake()
     {
@@ -36,6 +37,13 @@ public class DNCManager : GameMode
         
     }
 
+    public void RespawnBucket()
+    {
+        if (_bucket != null)
+            Destroy(_bucket);
+        SpawnBucket(DNCSkins.Instance.GetBucket());
+    }
+
     public override void EndSession()
     {
         EggSpawner._isSpawning = false;
@@ -44,9 +52,8 @@ public class DNCManager : GameMode
     }
     private void SpawnBucket(GameObject bucket)
     {
-        Vector3 player = GameObject.Find("Player").transform.position;
-        var buck = Instantiate(bucket, bucketPos.position, Quaternion.identity);
-        SceneManager.MoveGameObjectToScene(buck, SceneManager.GetSceneByName("DropNCatch"));
-        buck.transform.SetParent(sceneCollider);
+        _bucket = Instantiate(bucket, bucketPos.position, Quaternion.identity);
+        SceneManager.MoveGameObjectToScene(_bucket, SceneManager.GetSceneByName("DropNCatch"));
+        _bucket.transform.SetParent(sceneCollider);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading;
+using UnityEngine.SceneManagement;
 
 public class EggSpawner : MonoBehaviour
 {
@@ -50,6 +51,7 @@ public class EggSpawner : MonoBehaviour
         currentSpawnPoint.transform.parent.GetChild(2).GetComponent<MeshRenderer>().material = cubeDefaultMat;
         yield return new WaitForSeconds(1.5f);
         GameObject temp = Instantiate(egg);
+        SceneManager.MoveGameObjectToScene(temp, SceneManager.GetSceneByName("DropNCatch"));
         temp.transform.position = tempPos;
         if (_isSpawning)
         {
