@@ -55,6 +55,28 @@ public class BangerManager : GameMode
         GameManager.HideMainMenu(false);
     }    
 
+    public void RespawnHammer()
+    {
+        GameObject tempHammer = hammer;
+        hammer = Instantiate(BangerSkins.Instance.GetHammer(), tempHammer.transform.position, Quaternion.identity);
+        hammer.transform.SetParent(tempHammer.transform.parent, true);
+        Destroy(tempHammer);
+    }
+
+    public void ChangeHeads()
+    {
+        int headsAmount = heads.Count;
+        for (int i = 0; i < headsAmount; i++)
+        {
+            GameObject tempHead = heads[i].gameObject;
+            GameObject newHead = Instantiate(BangerSkins.Instance.GetHead(), tempHead.transform.position, Quaternion.identity);
+            newHead.transform.SetParent(tempHead.transform.parent, true);
+            newHead.GetComponent<BangerHead>().currHeadPos = tempHead.GetComponent<BangerHead>().currHeadPos;
+            heads[i] = newHead.GetComponent<BangerHead>();
+            Destroy(tempHead);
+        }
+    }
+
     private void StartRaisingHeads()
     {
         BangerHead tempHead = RandHead.GetRandHead(heads);

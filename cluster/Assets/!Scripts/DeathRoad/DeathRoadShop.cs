@@ -5,15 +5,14 @@ using UnityEngine;
 public class DeathRoadShop : Shop
 {
     [SerializeField] private GameObject typesButts;
+    [SerializeField] private GameObject playerButts;
     public override void ToggleItems(string item)
     {
         switch (item)
         {
-            case "":
+            case "player":
                 typesButts.SetActive(false);
-                break;
-            case " ":
-                typesButts.SetActive(false);
+                playerButts.SetActive(true);
                 break;
         }
 
@@ -28,6 +27,7 @@ public class DeathRoadShop : Shop
         else
         {
             typesButts.SetActive(true);
+            playerButts.SetActive(false);
         }
 
     }

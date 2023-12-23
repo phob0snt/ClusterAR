@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &464983634623098285
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 85474196667297466, guid: c26a75590db504e4191ba6b0a52dfe67, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.207
+      objectReference: {fileID: 0}
+    - target: {fileID: 85474196667297466, guid: c26a75590db504e4191ba6b0a52dfe67, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.373
+      objectReference: {fileID: 0}
+    - target: {fileID: 85474196667297466, guid: c26a75590db504e4191ba6b0a52dfe67, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.142
+      objectReference: {fileID: 0}
+    - target: {fileID: 85474196667297466, guid: c26a75590db504e4191ba6b0a52dfe67, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7660445
+      objectReference: {fileID: 0}
+    - target: {fileID: 85474196667297466, guid: c26a75590db504e4191ba6b0a52dfe67, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.6427876
+      objectReference: {fileID: 0}
+    - target: {fileID: 85474196667297466, guid: c26a75590db504e4191ba6b0a52dfe67, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 85474196667297466, guid: c26a75590db504e4191ba6b0a52dfe67, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 85474196667297466, guid: c26a75590db504e4191ba6b0a52dfe67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 85474196667297466, guid: c26a75590db504e4191ba6b0a52dfe67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 85474196667297466, guid: c26a75590db504e4191ba6b0a52dfe67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 273773282373294411, guid: c26a75590db504e4191ba6b0a52dfe67, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 41c04db42e0517246a7a7ba6717829ce, type: 2}
+    - target: {fileID: 7881403091606778403, guid: c26a75590db504e4191ba6b0a52dfe67, type: 3}
+      propertyPath: m_Name
+      value: GoldHammer Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053212380693681362, guid: c26a75590db504e4191ba6b0a52dfe67, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 64050f3905dc05741ae4ceeb7f877af0, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c26a75590db504e4191ba6b0a52dfe67, type: 3}

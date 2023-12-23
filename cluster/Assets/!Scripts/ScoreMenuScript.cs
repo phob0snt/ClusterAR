@@ -24,7 +24,7 @@ public class ScoreMenuScript : MonoBehaviour
                 tmp.text = $"Score: {EggCounter.Score}";
                 break;
             case DeathRoadManager:
-                tmp.text = $"Score: {FrogScript.Score}";
+                tmp.text = $"Score: {PlayerScript.Score}";
                 break;
         }
         

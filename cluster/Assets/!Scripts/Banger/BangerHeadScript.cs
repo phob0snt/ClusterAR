@@ -7,16 +7,16 @@ using UnityEngine;
 public class BangerHead : MonoBehaviour
 {
     private const float HIT_STRENGTH = 0.00008f;
-    private const float HEADS_MOVE_DIST = 0.05f;
+    private const float HEADS_MOVE_DIST = 0.1f;
     public static Action onCollision;
     private int _lerpCount = 0;
     private int _framesForLerp = 90;
-    private HeadPos currHeadPos = HeadPos.Bottom;
+    public HeadPos currHeadPos = HeadPos.Bottom;
     public static Action onHeadUp;
     public static int Score = 0;
     public static bool isRaising = false;
 
-    private enum HeadPos
+    public enum HeadPos
     {
         Top,
         Bottom
@@ -29,6 +29,7 @@ public class BangerHead : MonoBehaviour
             if (currHeadPos == HeadPos.Top && other.GetComponent<VelocityCheck>().PrevFrameVel > HIT_STRENGTH)
             {
                 Score++;
+                BangerSkins.Instance.IncreaseMoney(1);
                 StartCoroutine(MoveHeadByY(-HEADS_MOVE_DIST));
             }
         }

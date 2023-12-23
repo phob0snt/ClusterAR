@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static BangerSkins;
 
 public class DeathRoadManager : GameMode
 {
@@ -9,7 +10,7 @@ public class DeathRoadManager : GameMode
     [SerializeField] private GameObject sceneSetButton;
 
     [SerializeField] private MapGenerator mapGenerator;
-    [SerializeField] private FrogScript frogScript;
+    [SerializeField] private PlayerScript player;
     [SerializeField] private Moving moving;
     [SerializeField] private WoodProtector wp;
     [SerializeField] private StoneProtector sp;
@@ -35,11 +36,23 @@ public class DeathRoadManager : GameMode
     {
         sceneSetButton.SetActive(false);
         mapGenerator.Generate();
-        frogScript.sceneIsSet = true;
+        player.sceneIsSet = true;
         moving.CanMove = true;
         wp.SetPos();
         sp.SetPos();
         cp.SetPos();
+    }
+
+    public IEnumerator RespawnPlayer()
+    {
+        while (player.isMoving)
+            yield return null;
+        GameObject tempPlayer = player.gameObject;
+        GameObject newPlayer = Instantiate(DeathRoadSkins.Instance.GetPlayer(), tempPlayer.transform.position, tempPlayer.transform.rotation);
+        newPlayer.transform.SetParent(tempPlayer.transform.parent, true);
+        player = newPlayer.GetComponent<PlayerScript>();
+        player.sceneIsSet = tempPlayer.GetComponent<PlayerScript>().sceneIsSet;
+        Destroy(tempPlayer);
     }
 
     public override void EndSession()

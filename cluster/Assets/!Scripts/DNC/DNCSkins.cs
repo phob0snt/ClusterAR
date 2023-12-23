@@ -6,7 +6,7 @@ using UnityEngine;
 public class DNCSkins : MonoBehaviour
 {
     public static DNCSkins Instance;
-    private int _DNCMoney;
+    private int _DNCMoney = 100;
 
     public enum Bucket { Default, Rusty, Normal, Bright}
     public enum Egg { Default, Brown, Green, Rainbow }
@@ -67,6 +67,7 @@ public class DNCSkins : MonoBehaviour
                     {
                         DecreaseMoney(eggsPrices[Egg.Brown]);
                         SetEgg(Egg.Brown);
+                        boughtEggs[(int)Egg.Brown] = true;
                         return true;
                     }
                     else
@@ -84,6 +85,7 @@ public class DNCSkins : MonoBehaviour
                     {
                         DecreaseMoney(eggsPrices[Egg.Green]);
                         SetEgg(Egg.Green);
+                        boughtEggs[(int)Egg.Green] = true;
                         return true;
                     }
                     else
@@ -101,6 +103,7 @@ public class DNCSkins : MonoBehaviour
                     {
                         DecreaseMoney(eggsPrices[Egg.Rainbow]);
                         SetEgg(Egg.Rainbow);
+                        boughtEggs[(int)Egg.Rainbow] = true;
                         return true;
                     }
                     else
@@ -121,6 +124,7 @@ public class DNCSkins : MonoBehaviour
                     {
                         DecreaseMoney(bucketsPrices[Bucket.Rusty]);
                         SetBucket(Bucket.Rusty);
+                        boughtBuckets[(int)Bucket.Rusty] = true;
                         return true;
                     }
                     else
@@ -138,6 +142,7 @@ public class DNCSkins : MonoBehaviour
                     {
                         DecreaseMoney(bucketsPrices[Bucket.Normal]);
                         SetBucket(Bucket.Normal);
+                        boughtBuckets[(int)Bucket.Normal] = true;
                         return true;
                     }
                     else
@@ -155,6 +160,7 @@ public class DNCSkins : MonoBehaviour
                     {
                         DecreaseMoney(bucketsPrices[Bucket.Bright]);
                         SetBucket(Bucket.Bright);
+                        boughtBuckets[(int)Bucket.Bright] = true;
                         return true;
                     }
                     else

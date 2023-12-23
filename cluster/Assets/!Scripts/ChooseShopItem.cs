@@ -15,8 +15,12 @@ public class ChooseShopItem : MonoBehaviour
                     StartCoroutine(ShowNEMText());
                 break;
             case BangerManager:
+                if (!BangerSkins.Instance.TryBuyItem(item))
+                    StartCoroutine(ShowNEMText());
                 break;
             case DeathRoadManager:
+                if (!DeathRoadSkins.Instance.TryBuyItem(item))
+                    StartCoroutine(ShowNEMText());
                 break;
             case WaverManager:
                 if (!WaverSkins.Instance.TryBuyItem(item))
